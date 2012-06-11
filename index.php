@@ -1,12 +1,13 @@
 <?php
   include("topdog.php");
 ?>
+
 <!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
 <html>
 <head>
   <title>Mobile Domain Search</title>	
-	<meta name="description" content="Check domain name availability from your mobile device.">
-	<meta name="keywords" content="domain,domains,wap,mobile,jake jarvis,jakejarvis">
+  <meta name="description" content="Check domain name availability from your mobile device.">
+  <meta name="keywords" content="domain,domains,wap,mobile,jake jarvis,jakejarvis">
 </head>
 <body>
 
