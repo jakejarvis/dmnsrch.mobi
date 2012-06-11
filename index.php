@@ -1,17 +1,18 @@
 <?php
   include("topdog.php");
 ?>
-
 <!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
 <html>
 <head>
-<title>Mobile Domain Search</title>	
-	<meta name="description" content="Check domain name availability from your mobile device." />
-	<meta name="keywords" content="domain,domains,wap,mobile,jake jarvis,jakejarvis" />
+  <title>Mobile Domain Search</title>	
+	<meta name="description" content="Check domain name availability from your mobile device.">
+	<meta name="keywords" content="domain,domains,wap,mobile,jake jarvis,jakejarvis">
 </head>
 <body>
 
-<font face="Arial"><b>Mobile Domain Search</b></font><br /><br />
+<font face="Arial"><b>Mobile Domain Search</b></font>
+
+<br><br>
 
 <?php
   if($_POST['domain'] && $_POST['ext']) {
@@ -29,8 +30,9 @@
 ?>
 
 <form method="post" action="/">
-    <input type="text" name="domain" value="<?= $_POST['domain'] ?>" size="20"><br>
-    <select size="1" name="ext">
+  <input type="text" name="domain" value="<?= $_POST['domain'] ?>" size="20">
+  <br>
+  <select size="1" name="ext">
     <option selected value="com">.com</option>
     <option value="net">.net</option>
     <option value="org">.org</option>
@@ -39,13 +41,37 @@
     <option value="co.uk">.co.uk</option>
     <option value="name">.name</option>
     <option value="us">.us</option>
-    </select>
-    <br>
-    <input type="submit" value="Continue">
-</form><br />
+  </select>
+  <br>
+  <input type="submit" value="Continue">
+</form>
+
+<br>
 
 <font size="-2" face="Arial">A <a href="http://www.jakejarvis.com/">Jake Jarvis</a> Production</font>
 
-</body>
+<script type="text/javascript">
+  var _gauges = _gauges || [];
+  (function() {
+    var t   = document.createElement('script');
+    t.type  = 'text/javascript';
+    t.async = true;
+    t.id    = 'gauges-tracker';
+    t.setAttribute('data-site-id', '4fd6063c613f5d04b0000032');
+    t.src = '//secure.gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
 
+<script type="text/javascript">
+  var _gaq = [['_setAccount', 'UA-1563964-28'], ['_setDomainName', 'dmnsrch.mobi'], ['_trackPageview']];
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</body>
 </html>
