@@ -1,4 +1,4 @@
-<?php include("whois.php") ?>
+<?php require("whois.php") ?>
 
 <!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
 <html>
@@ -19,7 +19,7 @@
     $availability = check_domain($_POST['domain'], $_POST['ext']);
     if($availability == 0)
       echo "<font color=\"green\" face=\"Arial\"><b>" . $_POST['domain'] . "." . $_POST['ext'] . "</b> is available!</font>";
-    else if ($availability == 1)
+    else if($availability == 1)
       echo "<font color=\"red\" face=\"Arial\"><a href=\"http://" . $_POST['domain'] . "." . $_POST['ext'] . "\" target=\"_blank\"><b>" . $_POST['domain'] . "." . $_POST['ext'] . "</b></a> is not available.</font>";
     else
       echo "<font face=\"Arial\">Sorry, an error has occurred. Please try again later.</font>";
