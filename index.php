@@ -1,6 +1,11 @@
 <?php
-  include("topdog.php");
+/* if started from commandline, wrap parameters to $_POST and $_GET */
+if (!isset($_SERVER["HTTP_HOST"])) {
+  parse_str($argv[1], $_GET);
+  parse_str($argv[1], $_POST);
+}
 ?>
+<?php include("whois.php") ?>
 
 <!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
 <html>
@@ -17,15 +22,14 @@
 
 <?php
   if($_POST['domain'] && $_POST['ext']) {
-	$_POST['domain'] = str_replace(' ', '', $_POST['domain']);
+	  $_POST['domain'] = str_replace(' ', '', $_POST['domain']);
     $availability = check_domain($_POST['domain'], $_POST['ext']);
-    if ($availability == 0) {
+    if($availability == 0)
       echo "<font color=\"green\" face=\"Arial\"><b>" . $_POST['domain'] . "." . $_POST['ext'] . "</b> is available!</font>";
-    } else if ($availability == 1) {
+    else if ($availability == 1)
       echo "<font color=\"red\" face=\"Arial\"><a href=\"http://" . $_POST['domain'] . "." . $_POST['ext'] . "\" target=\"_blank\"><b>" . $_POST['domain'] . "." . $_POST['ext'] . "</b></a> is not available.</font>";
-    } else {
+    else
       echo "<font face=\"Arial\">Sorry, an error has occurred. Please try again later.</font>";
-    }
     echo "<br /><br />";
   }
 ?>
@@ -49,21 +53,7 @@
 
 <br>
 
-<font size="-2" face="Arial">A <a href="http://www.jakejarvis.com/">Jake Jarvis</a> Production</font>
-
-<script type="text/javascript">
-  var _gauges = _gauges || [];
-  (function() {
-    var t   = document.createElement('script');
-    t.type  = 'text/javascript';
-    t.async = true;
-    t.id    = 'gauges-tracker';
-    t.setAttribute('data-site-id', '4fd6063c613f5d04b0000032');
-    t.src = '//secure.gaug.es/track.js';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(t, s);
-  })();
-</script>
+<font size="-2" face="Arial">A <a href="https://jarv.is/">Jake Jarvis</a> Production</font>
 
 <script type="text/javascript">
   var _gaq = [['_setAccount', 'UA-1563964-28'], ['_setDomainName', 'dmnsrch.mobi'], ['_trackPageview']];
