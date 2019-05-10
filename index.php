@@ -1,10 +1,3 @@
-<?php
-/* if started from commandline, wrap parameters to $_POST and $_GET */
-if (!isset($_SERVER["HTTP_HOST"])) {
-  parse_str($argv[1], $_GET);
-  parse_str($argv[1], $_POST);
-}
-?>
 <?php include("whois.php") ?>
 
 <!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
