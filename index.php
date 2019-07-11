@@ -48,12 +48,19 @@
 
 <font size="-2" face="Arial">A <a href="https://jarv.is/">Jake Jarvis</a> Production</font>
 
-<script type="text/javascript">
-  var _gaq = [['_setAccount', 'UA-1563964-28'], ['_setDomainName', 'dmnsrch.mobi'], ['_trackPageview']];
+<script>
+  var _paq = _paq || [];
+  _paq.push(['setRequestMethod', 'POST']);
+  _paq.push(['setSecureCookie', true]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  _paq.push(['enableHeartBeatTimer']);
   (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    var u='https://stats.jarv.is/';
+    _paq.push(['setTrackerUrl', u+'m.php']);
+    _paq.push(['setSiteId', '8']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.defer=true; g.src=u+'m.js'; s.parentNode.insertBefore(g,s);
   })();
 </script>
 
