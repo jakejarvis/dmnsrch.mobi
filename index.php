@@ -15,12 +15,14 @@
 
 <?php
   if(isset($_POST['domain']) && isset($_POST['ext'])) {
-	  $_POST['domain'] = str_replace(' ', '', $_POST['domain']);
-    $availability = check_domain($_POST['domain'], $_POST['ext']);
+	$domain = filter_var($_POST['domain'], FILTER_SANITIZE_STRING);
+	$ext = filter_var($_POST['ext'], FILTER_SANITIZE_STRING);
+	$domain = str_replace(' ', '', $domain);
+    $availability = check_domain($domain, $ext);
     if($availability == 0)
-      echo "<font color=\"green\" face=\"Arial\"><b>" . $_POST['domain'] . "." . $_POST['ext'] . "</b> is available!</font>";
+      echo "<font color=\"green\" face=\"Arial\"><b>" . $domain . "." . $ext . "</b> is available!</font>";
     else if($availability == 1)
-      echo "<font color=\"red\" face=\"Arial\"><a href=\"http://" . $_POST['domain'] . "." . $_POST['ext'] . "\" target=\"_blank\"><b>" . $_POST['domain'] . "." . $_POST['ext'] . "</b></a> is not available.</font>";
+      echo "<font color=\"red\" face=\"Arial\"><a href=\"http://" . $domain . "." . $ext . "\" target=\"_blank\"><b>" . $domain . "." . $ext . "</b></a> is not available.</font>";
     else
       echo "<font face=\"Arial\">Sorry, an error has occurred. Please try again later.</font>";
     echo "<br /><br />";
@@ -28,7 +30,7 @@
 ?>
 
 <form method="post" action="/">
-  <input type="text" name="domain" value="<? if(isset($_POST['domain'])) echo $_POST['domain']; ?>" size="20">
+  <input type="text" name="domain" value="<? if(isset($_POST['domain'])) echo $domain; ?>" size="20">
   <br>
   <select size="1" name="ext">
     <option selected value="com">.com</option>
