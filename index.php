@@ -14,7 +14,7 @@
 <br><br>
 
 <?php
-  if($_POST['domain'] && $_POST['ext']) {
+  if(isset($_POST['domain']) && isset($_POST['ext'])) {
 	  $_POST['domain'] = str_replace(' ', '', $_POST['domain']);
     $availability = check_domain($_POST['domain'], $_POST['ext']);
     if($availability == 0)
@@ -28,7 +28,7 @@
 ?>
 
 <form method="post" action="/">
-  <input type="text" name="domain" value="<?= $_POST['domain'] ?>" size="20">
+  <input type="text" name="domain" value="<? if(isset($_POST['domain'])) echo $_POST['domain']; ?>" size="20">
   <br>
   <select size="1" name="ext">
     <option selected value="com">.com</option>
@@ -57,10 +57,10 @@
   _paq.push(['enableHeartBeatTimer']);
   (function() {
     var u='https://stats.jarv.is/';
-    _paq.push(['setTrackerUrl', u+'m.php']);
+    _paq.push(['setTrackerUrl', u+'send']);
     _paq.push(['setSiteId', '8']);
     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.async=true; g.defer=true; g.src=u+'m.js'; s.parentNode.insertBefore(g,s);
+    g.async=true; g.defer=true; g.src=u+'stats.js'; s.parentNode.insertBefore(g,s);
   })();
 </script>
 
