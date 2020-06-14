@@ -50,21 +50,8 @@
 
 <font size="-2" face="Arial">A <a href="https://jarv.is/">Jake Jarvis</a> Production</font>
 
-<script>
-  var _paq = _paq || [];
-  _paq.push(['setRequestMethod', 'POST']);
-  _paq.push(['setSecureCookie', true]);
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  _paq.push(['enableHeartBeatTimer']);
-  (function() {
-    var u='https://stats.jarv.is/';
-    _paq.push(['setTrackerUrl', u+'send']);
-    _paq.push(['setSiteId', '8']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.async=true; g.defer=true; g.src=u+'stats.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
+<script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+<noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt=""/></noscript>
 
 </body>
 </html>
