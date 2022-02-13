@@ -50,8 +50,5 @@
 
 <font size="-2" face="Arial">A <a href="https://jarv.is/">Jake Jarvis</a> Production</font>
 
-<script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
-<noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt=""/></noscript>
-
 </body>
 </html>
